@@ -1,3 +1,4 @@
+add_subdirectory(apps/graphics-programming)
 add_subdirectory(apps/pong)
 add_subdirectory(apps/pong-e2e)
 add_subdirectory(apps/pong-ecs)

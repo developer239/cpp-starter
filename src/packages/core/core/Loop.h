@@ -24,6 +24,7 @@ class Loop {
  public:
   double msPreviousFrame;
   double deltaTime = 0;
+  double fpsLimit = 60;
 
   explicit Loop(std::vector<IStrategy*> strategies, int windowWidth = 800, int windowHeight = 600, const char *title = "CPP Starter");
 
