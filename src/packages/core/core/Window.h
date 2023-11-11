@@ -13,6 +13,10 @@ class Window {
   Window();
 
   std::shared_ptr<SDL_Window> Get();
+
+  int GetWidth();
+
+  int GetHeight();
 };
 
 }  // namespace Core

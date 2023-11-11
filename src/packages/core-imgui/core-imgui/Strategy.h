@@ -2,8 +2,8 @@
 
 #include <utility>
 
-#include "backends/imgui_impl_sdl.h"
-#include "backends/imgui_impl_sdlrenderer.h"
+#include "backends/imgui_impl_sdl2.h"
+#include "backends/imgui_impl_sdlrenderer2.h"
 #include "core/IStrategy.h"
 #include "core/Renderer.h"
 #include "core/Window.h"
@@ -26,7 +26,7 @@ class Strategy : public Core::IStrategy {
 
   void OnRender(Core::Window& window, Core::Renderer& renderer) override;
 
-  void OnUpdate(Core::Window& window, Core::Renderer& renderer) override;
+  void OnUpdate(Core::Window& window, Core::Renderer& renderer, double deltaTime) override;
 };
 
 }  // namespace CoreImGui

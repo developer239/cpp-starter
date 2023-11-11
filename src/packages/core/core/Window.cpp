@@ -33,4 +33,16 @@ Window::Window() {
 
 std::shared_ptr<SDL_Window> Window::Get() { return window; }
 
+int Window::GetWidth() {
+  int windowWidth;
+  SDL_GetWindowSize(window.get(), &windowWidth, nullptr); // Only get the width
+  return windowWidth;
+}
+
+int Window::GetHeight() {
+  int windowHeight;
+  SDL_GetWindowSize(window.get(), nullptr, &windowHeight); // Only get the height
+  return windowHeight;
+}
+
 }  // namespace Core
