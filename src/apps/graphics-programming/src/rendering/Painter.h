@@ -168,7 +168,8 @@ class Painter {
       // Loop all three vertices to perform projection
       for (int j = 0; j < 3; j++) {
         // Project the current vertex
-        Vec2 projected_point = projector->project3DPoint(transformedVertices[j]);
+        Vec2 projected_point =
+            projector->Project3DPoint(transformedVertices[j]);
 
         // Scale and translate the projected points to the middle of the screen
         projected_point.x += (windowWidth / 2);
