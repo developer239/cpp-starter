@@ -38,7 +38,7 @@ class LoopStrategy : public Core::IStrategy {
   }
 
   void OnRender(Core::Window& window, Core::Renderer& renderer) override {
-    painter.ClearColorBuffer(0xFFFFFFFF);
+    painter.ClearColorBuffer();
     painter.BackgroundGrid();
 
     std::vector<Triangle> trianglesToRender;
@@ -123,10 +123,13 @@ class LoopStrategy : public Core::IStrategy {
       Triangle triangle = trianglesToRender[i];
 
       // Draw unfilled triangle
-      painter.DrawFilledTriangle(
-          triangle.p1.x, triangle.p1.y, // vertex A
-          triangle.p2.x, triangle.p2.y, // vertex B
-          triangle.p3.x, triangle.p3.y, // vertex C
+      painter.FilledTriangle(
+          triangle.p1.x,
+          triangle.p1.y,  // vertex A
+          triangle.p2.x,
+          triangle.p2.y,  // vertex B
+          triangle.p3.x,
+          triangle.p3.y,  // vertex C
           0xFF00FF00
       );
       painter.Triangle(
@@ -137,6 +140,6 @@ class LoopStrategy : public Core::IStrategy {
       );
     }
 
-    painter.Render(renderer);
+    painter.RenderColorBuffer(renderer);
   }
 };
