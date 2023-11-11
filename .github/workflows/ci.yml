@@ -29,5 +29,5 @@ jobs:
         working-directory: build
 
       - name: Test
-        run: ctest
+        run: ctest --output-on-failure
         working-directory: build
