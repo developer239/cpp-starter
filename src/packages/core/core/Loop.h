@@ -19,13 +19,15 @@ class Loop {
 
   bool shouldQuit = false;
 
-  double msPreviousFrame;
-  double deltaTime = 0;
-
   SDL_Event event{};
 
  public:
-  explicit Loop(std::vector<IStrategy*> strategies);
+  double msPreviousFrame;
+  double deltaTime = 0;
+
+  explicit Loop(std::vector<IStrategy*> strategies, int windowWidth = 800, int windowHeight = 600, const char *title = "CPP Starter");
+
+  void AddStrategy(IStrategy* strategy);
 
   void UpdateDeltaTime();
 
@@ -34,6 +36,8 @@ class Loop {
   ~Loop();
 
   void Run();
+
+  void RunOneFrame();
 };
 
 }  // namespace Core

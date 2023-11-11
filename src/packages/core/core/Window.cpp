@@ -3,7 +3,7 @@
 
 namespace Core {
 
-Window::Window() {
+Window::Window(int width, int height, const char *title) {
   if (SDL_Init(SDL_INIT_EVERYTHING)) {
     throw std::runtime_error("Failed to initialize SDL");
   }
@@ -16,11 +16,11 @@ Window::Window() {
 
   window = std::shared_ptr<SDL_Window>(
       SDL_CreateWindow(
-          "Automation Engine",
+          title,
           SDL_WINDOWPOS_CENTERED,
           SDL_WINDOWPOS_CENTERED,
-          displayMode.w / 4 * 3,
-          displayMode.h / 4 * 3,
+          width,
+          height,
           SDL_WINDOW_RESIZABLE
       ),
       SDL_DestroyWindow
