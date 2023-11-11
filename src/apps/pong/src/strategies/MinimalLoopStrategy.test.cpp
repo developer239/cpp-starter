@@ -76,7 +76,7 @@ TEST_F(MinimalLoopStrategyTest, HandleEventAndUpdate) {
 
   // Simulate for ball movement
 
-  // Update again and check position
+  // Render again and check position
   strategy.OnUpdate(testWindow, testRenderer, deltaTime);
 
   // Check if the paddle position is updated correctly

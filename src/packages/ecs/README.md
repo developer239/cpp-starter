@@ -15,7 +15,7 @@ class PositionSystem : public ECS::System {
  public:
   PositionSystem() { RequireComponent<PositionComponent>(); }
 
-  void Update() {
+  void Render() {
     for (auto entity : GetSystemEntities()) {
       auto& component = ECS::Registry::Instance().GetComponent<PositionComponent>(entity);
       component.x += 1;
@@ -36,8 +36,8 @@ main() {
   EXPECT_FLOAT_EQ(position.x, 0);
   EXPECT_FLOAT_EQ(position.y, 0);
 
-  ECS::Registry::Instance().Update();
-  ECS::Registry::Instance().GetSystem<PositionSystem>().Update();
+  ECS::Registry::Instance().Render();
+  ECS::Registry::Instance().GetSystem<PositionSystem>().Render();
 
   EXPECT_FLOAT_EQ(position.x, 1);
   EXPECT_FLOAT_EQ(position.y, 1);  

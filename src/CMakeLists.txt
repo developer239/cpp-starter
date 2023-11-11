@@ -1,5 +1,6 @@
 add_subdirectory(apps/pong)
 add_subdirectory(apps/pong-e2e)
+add_subdirectory(apps/pong-ecs)
 
 add_subdirectory(packages/core)
 add_subdirectory(packages/core-imgui)

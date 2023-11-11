@@ -111,6 +111,10 @@ class Registry {
     return "no-tag";
   }
 
+  bool DoesEntityHaveTag(Entity entity, std::string tag) {
+    return GetEntityTag(entity) == tag;
+  }
+
   std::vector<std::string> GetEntityGroups(Entity entity) const {
     std::vector<std::string> groups = {};
 
