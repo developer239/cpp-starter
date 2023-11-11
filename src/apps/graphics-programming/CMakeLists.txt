@@ -10,8 +10,7 @@ set(SOURCES
         src/LoopStrategy.h
         src/math/Faces.h
         src/math/Triangle.h
-        src/math/Vec2.h
-        src/math/Vec3.h
+        src/math/Vec.h
         src/rendering/Camera.h
         src/rendering/Painter.h
         src/rendering/Projector.h

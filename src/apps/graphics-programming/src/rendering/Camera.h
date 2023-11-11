@@ -1,14 +1,14 @@
 #pragma once
 
 #include <vector>
-#include "../math/Vec3.h"
+#include "../math/Vec.h"
 
 class Camera {
   public:
-    Vec3 position;
+    Vec<3> position;
 
     Camera() {
-      position = Vec3(0, 0, -5);
+      position = Vec<3>(0, 0, -5);
     }
 };
 

@@ -17,7 +17,7 @@ class WavefrontLoader {
     char line[256];
     while (fgets(line, sizeof(line), file)) {
       if (strncmp(line, "v ", 2) == 0) {
-        Vec3 vertex;
+        Vec<3> vertex;
         sscanf(line, "v %f %f %f", &vertex.x, &vertex.y, &vertex.z);
 
         mesh.vertices.push_back(vertex);

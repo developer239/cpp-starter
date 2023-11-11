@@ -116,21 +116,21 @@ class Painter {
     for (int i = 0; i < mesh.faces.size(); i++) {
       auto meshFace = mesh.faces[i];
 
-      std::vector<Vec3> faceVertices(3);
+      std::vector<Vec<3>> faceVertices(3);
 
       faceVertices[0] = mesh.vertices[meshFace.a - 1];
       faceVertices[1] = mesh.vertices[meshFace.b - 1];
       faceVertices[2] = mesh.vertices[meshFace.c - 1];
 
-      std::vector<Vec3> transformedVertices(3);
+      std::vector<Vec<3>> transformedVertices(3);
 
       // Loop all three vertices of this current face and apply transformations
       for (int j = 0; j < 3; j++) {
-        Vec3 transformed_vertex = faceVertices[j];
+        Vec<3> transformed_vertex = faceVertices[j];
 
-        transformed_vertex = transformed_vertex.rotateX(mesh.rotation.x);
-        transformed_vertex = transformed_vertex.rotateY(mesh.rotation.y);
-        transformed_vertex = transformed_vertex.rotateZ(mesh.rotation.z);
+        transformed_vertex = transformed_vertex.RotateX(mesh.rotation.x);
+        transformed_vertex = transformed_vertex.RotateY(mesh.rotation.y);
+        transformed_vertex = transformed_vertex.RotateZ(mesh.rotation.z);
 
         // Translate the vertices away from the camera
         transformed_vertex.z += 5;
@@ -141,19 +141,19 @@ class Painter {
 
       if (shouldCull) {
         // Check backface culling
-        Vec3 vector_a = transformedVertices[0]; /*   A   */
-        Vec3 vector_b = transformedVertices[1]; /*  / \  */
-        Vec3 vector_c = transformedVertices[2]; /* C---B */
+        Vec<3> vector_a = transformedVertices[0]; /*   A   */
+        Vec<3> vector_b = transformedVertices[1]; /*  / \  */
+        Vec<3> vector_c = transformedVertices[2]; /* C---B */
 
         // Get the vector subtraction of B-A and C-A
-        Vec3 vector_ab = vector_b - vector_a;
-        Vec3 vector_ac = vector_c - vector_a;
+        Vec<3> vector_ab = vector_b - vector_a;
+        Vec<3> vector_ac = vector_c - vector_a;
 
         // Compute the face normal (using cross product to find perpendicular)
-        Vec3 normal = vector_ab.CrossProduct(vector_ac);
+        Vec<3> normal = vector_ab.CrossProduct(vector_ac);
 
         // Find the vector between a point in the triangle and the camera origin
-        Vec3 camera_ray = projector->camera->position - vector_a;
+        Vec<3> camera_ray = projector->camera->position - vector_a;
 
         float dot_normal_camera = normal.Normalize().DotProduct(camera_ray.Normalize());
 
@@ -168,7 +168,7 @@ class Painter {
       // Loop all three vertices to perform projection
       for (int j = 0; j < 3; j++) {
         // Project the current vertex
-        Vec2 projected_point =
+        Vec<2> projected_point =
             projector->Project3DPoint(transformedVertices[j]);
 
         // Scale and translate the projected points to the middle of the screen
