@@ -1,0 +1,13 @@
+#pragma once
+
+enum GUISystemLayoutNodePosition {
+  LEFT,
+  LEFT_TOP,
+  LEFT_MID,
+  LEFT_BOTTOM,
+  RIGHT,
+  RIGHT_TOP,
+  RIGHT_BOTTOM,
+  RIGHT_BOTTOM_LEFT,
+  RIGHT_BOTTOM_RIGHT
+};
