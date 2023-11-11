@@ -7,9 +7,9 @@ class Projector {
  public:
   float fovFactor = 640;
 
-  std::shared_ptr<Camera> camera;
+  Camera camera;
 
-  Projector() { camera = std::make_shared<Camera>(); }
+  Projector() { camera = Camera(); }
 
   Vec<2> Project3DPoint(Vec<3> point) const {
     return Vec<2>{

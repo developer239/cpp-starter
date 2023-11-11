@@ -49,8 +49,14 @@ void Loop::RunOneFrame() {
 
   for (auto& strategy : strategies) {
     strategy->OnBeforeRender(window, renderer);
+  }
+  for (auto& strategy : strategies) {
     strategy->OnUpdate(window, renderer, deltaTime);
+  }
+  for (auto& strategy : strategies) {
     strategy->OnRender(window, renderer);
+  }
+  for (auto& strategy : strategies) {
     strategy->OnAfterRender(window, renderer);
   }
 

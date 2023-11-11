@@ -12,8 +12,8 @@ class Mesh {
   std::vector<std::vector<Vec<3>>> data;
 
   void rotate() {
-    rotation.x += 0.01;
-    rotation.y += 0.01;
-    rotation.z += 0.01;
+    rotation.x += 0.1;
+    rotation.y += 0.1;
+    rotation.z += 0.1;
   }
 };

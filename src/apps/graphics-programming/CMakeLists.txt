@@ -15,7 +15,7 @@ set(SOURCES
         src/rendering/Painter.h
         src/rendering/Projector.h
         src/rendering/WavefrontLoader.h
-        src/utils.h src/gui/Debug.h)
+        src/utils.h src/gui/Controls.h)
 
 add_executable(${APP_NAME} ${SOURCES})
 

@@ -8,7 +8,7 @@ class Camera {
     Vec<3> position;
 
     Camera() {
-      position = Vec<3>(0, 0, -5);
+      position = Vec<3>(0, 0, -500);
     }
 };
 

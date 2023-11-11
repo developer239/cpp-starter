@@ -12,7 +12,7 @@
 
 class Painter {
  public:
-  std::shared_ptr<Projector> projector;
+  Projector projector;
   int windowWidth;
   int windowHeight;
 
@@ -24,7 +24,6 @@ class Painter {
         windowHeight(windowHeight),
         colorBuffer(windowWidth * windowHeight),
         colorBufferTexture(nullptr, SDL_DestroyTexture) {
-    projector = std::make_shared<Projector>();
   }
 
   void Pixel(int x, int y, uint32_t color) {
@@ -153,7 +152,7 @@ class Painter {
         Vec<3> normal = vector_ab.CrossProduct(vector_ac);
 
         // Find the vector between a point in the triangle and the camera origin
-        Vec<3> camera_ray = projector->camera->position - vector_a;
+        Vec<3> camera_ray = projector.camera.position - vector_a;
 
         float dot_normal_camera = normal.Normalize().DotProduct(camera_ray.Normalize());
 
@@ -169,7 +168,7 @@ class Painter {
       for (int j = 0; j < 3; j++) {
         // Project the current vertex
         Vec<2> projected_point =
-            projector->Project3DPoint(transformedVertices[j]);
+            projector.Project3DPoint(transformedVertices[j]);
 
         // Scale and translate the projected points to the middle of the screen
         projected_point.x += (windowWidth / 2);

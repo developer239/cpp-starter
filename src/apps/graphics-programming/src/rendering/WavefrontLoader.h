@@ -2,12 +2,11 @@
 
 #include <cstdio>
 #include <iostream>
-#include "../geometry/Cube.h"
 #include "../geometry/Mesh.h"
 
 class WavefrontLoader {
  public:
-  static bool LoadObjFile(char* filename, Cube& mesh) {
+  static bool LoadObjFile(char* filename, Mesh& mesh) {
     FILE* file = fopen(filename, "r");
     if (file == nullptr) {
       printf("Could not open file %s\n", filename);
