@@ -11,9 +11,13 @@ set(SOURCES
 
 add_executable(${APP_NAME} ${SOURCES})
 
+# Copy assets
 file(COPY assets DESTINATION ${CMAKE_BINARY_DIR}/src/apps/${APP_FOLDER_NAME})
 
 target_link_libraries(${APP_NAME} Core)
+
+#
+# Tests
 
 add_test(AllTests${LIB_NAME} ${APP_NAME_TEST})
 
@@ -24,13 +28,11 @@ set(SOURCES_TEST
         src/strategies/MinimalLoopStrategy.test.cpp)
 
 add_executable(${APP_NAME_TEST} ${SOURCES_TEST})
+
 target_link_libraries(${APP_NAME_TEST} PRIVATE
         gtest
         gmock
         gmock_main
         Core
         SDL2::SDL2
-        SDL2::TTF
-        SDL2::Image
-        SDL2::Mixer
         )
