@@ -5,7 +5,18 @@ set(APP_NAME_TEST ${LIB_NAME}Test)
 
 set(SOURCES
         src/main.cpp
-        src/LoopStrategy.h src/structs/Faces.h src/structs/Triangle.h src/structs/Vec2.h src/structs/Vec3.h src/shapes/Cube.h src/shapes/Mesh.h src/services/Camera.h src/services/Painter.h src/services/Projector.h src/services/WavefrontLoader.h src/GameObject.h)
+        src/geometry/Cube.h
+        src/geometry/Mesh.h
+        src/LoopStrategy.h
+        src/math/Faces.h
+        src/math/Triangle.h
+        src/math/Vec2.h
+        src/math/Vec3.h
+        src/rendering/Camera.h
+        src/rendering/Painter.h
+        src/rendering/Projector.h
+        src/rendering/WavefrontLoader.h
+        )
 
 add_executable(${APP_NAME} ${SOURCES})
 

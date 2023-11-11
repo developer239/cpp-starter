@@ -5,7 +5,7 @@
 #include <cstdint>
 #include <memory>
 #include <vector>
-#include "../structs/Triangle.h"
+#include "../math/Triangle.h"
 #include "Projector.h"
 
 class Painter {

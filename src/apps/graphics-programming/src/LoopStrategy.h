@@ -1,13 +1,12 @@
 #pragma once
 
-#include "GameObject.h"
 #include "core/AssetStore.h"
 #include "core/IStrategy.h"
 #include "core/Window.h"
 #include "logger/Logger.h"
-#include "services/Painter.h"
-#include "services/WavefrontLoader.h"
-#include "shapes/Cube.h"
+#include "rendering/Painter.h"
+#include "rendering/WavefrontLoader.h"
+#include "geometry/Cube.h"
 
 class LoopStrategy : public Core::IStrategy {
  public:

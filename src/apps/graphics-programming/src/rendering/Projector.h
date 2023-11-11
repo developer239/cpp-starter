@@ -1,8 +1,8 @@
 #pragma once
 
 #include <vector>
-#include "../structs/Vec2.h"
-#include "../structs/Vec3.h"
+#include "../math/Vec2.h"
+#include "../math/Vec3.h"
 #include "Camera.h"
 
 class Projector {

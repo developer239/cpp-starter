@@ -1,8 +1,8 @@
 #pragma once
 
 #include <vector>
-#include "../structs/Faces.h"
-#include "../structs/Vec3.h"
+#include "../math/Faces.h"
+#include "../math/Vec3.h"
 
 class Mesh {
  public:

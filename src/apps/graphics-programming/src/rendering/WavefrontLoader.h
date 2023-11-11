@@ -2,8 +2,8 @@
 
 #include <cstdio>
 #include <iostream>
-#include "../shapes/Mesh.h"
-#include "../shapes/Cube.h"
+#include "../geometry/Mesh.h"
+#include "../geometry/Cube.h"
 
 class WavefrontLoader {
   public:
