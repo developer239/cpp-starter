@@ -15,7 +15,7 @@ set(SOURCES
         src/rendering/Painter.h
         src/rendering/Projector.h
         src/rendering/WavefrontLoader.h
-        src/utils.h)
+        src/utils.h src/gui/Debug.h)
 
 add_executable(${APP_NAME} ${SOURCES})
 
@@ -23,4 +23,5 @@ add_executable(${APP_NAME} ${SOURCES})
 file(COPY assets DESTINATION ${CMAKE_BINARY_DIR}/src/apps/${APP_FOLDER_NAME})
 
 target_link_libraries(${APP_NAME} Core)
+target_link_libraries(${APP_NAME} CoreImgui)
 target_link_libraries(${APP_NAME} Logger)
