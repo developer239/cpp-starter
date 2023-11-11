@@ -2,7 +2,10 @@
 
 namespace Core {
 
-Loop::Loop(std::vector<IStrategy*> strategies, int windowWidth, int windowHeight, const char *title)
+Loop::Loop(
+    std::vector<IStrategy*> strategies, int windowWidth, int windowHeight,
+    const char* title
+)
     : window(windowWidth, windowHeight, title),
       renderer(window.Get()),
       strategies(std::move(strategies)),
@@ -30,6 +33,10 @@ void Loop::RunOneFrame() {
   UpdateDeltaTime();
   UpdateMsPreviousFrame();
 
+  if (deltaTime < 1.0 / fpsLimit) {
+    SDL_Delay((1.0 / fpsLimit - deltaTime) * 1000);
+  }
+
   while (SDL_PollEvent(&event)) {
     for (auto& strategy : strategies) {
       strategy->HandleEvent(event);
@@ -42,8 +49,14 @@ void Loop::RunOneFrame() {
 
   for (auto& strategy : strategies) {
     strategy->OnBeforeRender(window, renderer);
+  }
+  for (auto& strategy : strategies) {
     strategy->OnUpdate(window, renderer, deltaTime);
+  }
+  for (auto& strategy : strategies) {
     strategy->OnRender(window, renderer);
+  }
+  for (auto& strategy : strategies) {
     strategy->OnAfterRender(window, renderer);
   }
 

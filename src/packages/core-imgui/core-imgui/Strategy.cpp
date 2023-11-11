@@ -13,6 +13,8 @@ void Strategy::Init(Core::Window& window, Core::Renderer& renderer) {
   ImGui::CreateContext();
   ImGuiIO& io = ImGui::GetIO();
 
+  ImGui::StyleColorsDark();
+
   ImGui_ImplSDL2_InitForSDLRenderer(window.Get().get(), renderer.Get().get());
   ImGui_ImplSDLRenderer2_Init(renderer.Get().get());
 }
