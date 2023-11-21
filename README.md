@@ -19,7 +19,7 @@ $ brew install onnxruntime
 $ brew install opencv
 ```
 
-2) Build (I don't think assets are copied correctly, I am using CLion to run the project):
+2) Build:
 
 ```bash
 $ cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=$(brew --prefix)/bin/ninja -G Ninja -S . -B build
@@ -31,8 +31,8 @@ $ ctest
 3) Run:
 
 ```bash
-$ ./build/src/apps/pong/AppPong
-$ ./build/src/apps/pong-ecs/AppPongECS
+$  cd build/src/apps/pong
+$ ./AppPong 
 ```
 
 ## Project Structure
