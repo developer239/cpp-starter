@@ -9,7 +9,17 @@ The cpp-starter project is designed as a starting point for creating C++ applica
 It leverages SDL2 for graphical rendering and input handling and provides a modular architecture for
 scalable development.
 
-## Running the Project
+## Running the Project on Mac
+
+1) Install dependencies:
+
+```bash
+$ brew install cmake
+$ brew install onnxruntime 
+$ brew install opencv
+```
+
+2) Build (I don't think assets are copied correctly, I am using CLion to run the project):
 
 ```bash
 $ cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=$(brew --prefix)/bin/ninja -G Ninja -S . -B build
