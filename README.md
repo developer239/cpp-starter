@@ -14,9 +14,7 @@ scalable development.
 1) Install dependencies:
 
 ```bash
-$ brew install cmake
-$ brew install onnxruntime 
-$ brew install opencv
+$ brew install cmake ninja sdl2 sdl2_ttf sdl2_image sdl2_mixer
 ```
 
 2) Build:
