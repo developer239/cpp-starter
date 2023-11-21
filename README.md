@@ -28,6 +28,13 @@ $ ninja
 $ ctest
 ```
 
+3) Run:
+
+```bash
+$ ./build/src/apps/pong/AppPong
+$ ./build/src/apps/pong-ecs/AppPongECS
+```
+
 ## Project Structure
 
 The project is structured into various directories, each serving a specific purpose:
