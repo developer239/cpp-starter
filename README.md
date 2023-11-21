@@ -112,3 +112,5 @@ target_link_libraries(${APP_NAME_TEST} PRIVATE
         SDL2::SDL2
         )
 ```
+
+![test-preview](./e2e-test-preview.gif)
